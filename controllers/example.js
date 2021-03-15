@@ -1,13 +1,8 @@
 class Example {
 
+    index(req, res) {
 
-    constructor() {
-        console.log('test');
-    }
-
-    index(res, req) {
-
-
+        res.send('NONONO');
 
     }
 

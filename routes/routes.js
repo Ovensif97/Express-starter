@@ -19,6 +19,7 @@ router.get('/', function(req, res, next) {
 
 // Example : page example with middleware and get request type
 router.use('/example', exampleMiddleware.AuthExample);
+router.get('/example/', (req, res, next) => { res.send('TEST') });
 router.get('/example/hello', exampleController.index);
 
 

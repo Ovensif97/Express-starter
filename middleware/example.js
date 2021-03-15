@@ -1,7 +1,10 @@
 class ExampleMiddleware {
 
 
-    AuthExample(res, req) {}
+    AuthExample(req, res, next) {
+
+        next();
+    }
 
 
 };
