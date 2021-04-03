@@ -4,8 +4,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var routers = require('./routes/routes');
-var usersRouter = require('./routes/users');
+var example = require('./routes/example');
+
+// If you wanna put middleware just input here!
+// const middleware = require('./middleware/example');
 
 var app = express();
 
@@ -19,8 +21,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routers);
-app.use('/users', usersRouter);
+app.use('/', example);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

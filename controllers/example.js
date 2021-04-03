@@ -1,9 +1,25 @@
+var sequalize = require('../database/mysql');
+
+
 class Example {
 
     index(req, res) {
 
-        res.send('NONONO');
+        res.send('nice');
 
+    }
+
+    async test_connection(req, res) {
+
+        try {
+
+            await sequalize.authenticate();
+            console.log('Connection has been established successfully.');
+
+        } catch (error) {
+
+            console.error('Unable to connect to the database:', error);
+        }
     }
 
 }
