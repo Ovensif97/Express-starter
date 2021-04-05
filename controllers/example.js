@@ -1,3 +1,5 @@
+var sequalize = require('../database/Mysql');
+
 class Example {
 
     index(req, res) {

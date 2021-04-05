@@ -4,8 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var routers = require('./routes/routes');
-var usersRouter = require('./routes/users');
+// Register router below
+var example = require('./routes/example');
+let Auth = require('./routes/AuthRouter');
+
+// If you wanna put middleware just input here!
+// const middleware = require('./middleware/example');
 
 var app = express();
 
@@ -19,8 +23,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routers);
-app.use('/users', usersRouter);
+// Declare middleware and sub url below
+app.use('/', example);
+app.use('/Auth/', Auth);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
