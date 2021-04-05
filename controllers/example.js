@@ -1,5 +1,4 @@
-var sequalize = require('../database/mysql');
-
+var sequalize = require('../database/Mysql');
 
 class Example {
 
